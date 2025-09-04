@@ -2,11 +2,10 @@
   "name": "admin-console-dlt",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
-    "start": "next start",
-    "lint": "eslint"
+   "scripts": {
+    "build": "next build",
+    "export": "next export",
+    "build:pages": "next build && next export"
   },
   "dependencies": {
     "next": "15.5.2",

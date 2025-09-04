@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 const LoginPage = () => {
   return (
     <div className="bg-red-0 h-screen w-full flex items-center justify-center">
@@ -53,7 +54,7 @@ const LoginPage = () => {
                 </div>
               </div>
               <button className="bg-blue-500 font-semibold text-white py-2 rounded-md hover:bg-blue-600 transition duration-300">
-                Login
+                <Link href="/dashboard">Login</Link>
               </button>
             </div>
             {/* Login via */}

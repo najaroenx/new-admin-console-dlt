@@ -14,7 +14,7 @@ concurrency:
   group: "pages"
   cancel-in-progress: true
 
-# ให้ทุก step รันในโฟลเดอร์ย่อยของแอป
+# รันคำสั่งทั้งหมดในโฟลเดอร์ย่อย admin-console-dlt
 defaults:
   run:
     working-directory: admin-console-dlt
@@ -31,14 +31,14 @@ jobs:
         with:
           node-version: 20
           cache: npm
-          # บอกตำแหน่ง lock file ที่อยู่ใน subfolder
           cache-dependency-path: admin-console-dlt/package-lock.json
 
-      - name: Install deps
+      - name: Install dependencies
         run: npm ci
 
-      - name: Build (Next static export)
-        run: npm run build:pages
+      - name: Build Next.js (static export)
+        run: npm run build
+        # Next.js จะสร้างโฟลเดอร์ out/ ให้เอง เพราะตั้ง output: "export"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
